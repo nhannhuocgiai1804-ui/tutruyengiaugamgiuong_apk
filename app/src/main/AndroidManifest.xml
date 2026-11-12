@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <!-- Hỗ trợ tối ưu màn hình máy tính bảng (Tablet 7"-12"+) và màn hình gập (Foldables) -->
+    <!-- Hỗ trợ màn hình máy tính bảng và màn hình gập -->
     <supports-screens
         android:smallScreens="true"
         android:normalScreens="true"
@@ -18,14 +18,14 @@
         android:requiresSmallestWidthDp="320" />
 
     <application
-       android:allowBackup="true"
-       android:label="TeraBox Reader"
-       android:icon="@android:drawable/sym_def_app_icon"
-       android:supportsRtl="true"
-       android:theme="@android:style/Theme.Material.NoActionBar"
-       android:hardwareAccelerated="true"
-       android:resizeableActivity="true"
-       tools:targetApi="34">
+        android:allowBackup="true"
+        android:label="TeraBox Reader"
+        android:icon="@android:drawable/sym_def_app_icon"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Material.NoActionBar"
+        android:hardwareAccelerated="true"
+        android:resizeableActivity="true"
+        tools:targetApi="34">
 
         <activity
             android:name=".ui.MainActivity"
@@ -33,14 +33,14 @@
             android:screenOrientation="unspecified"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|smallestScreenSize"
             android:windowSoftInputMode="adjustResize">
-            
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- Hỗ trợ mở link chia sẻ TeraBox từ app khác (Zalo, Chrome, Messenger) -->
-            <intent-filter android:autoVerify="true">
+            <!-- Mở link chia sẻ TeraBox từ app khác (Zalo, Chrome, Messenger) -->
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -48,15 +48,4 @@
                 <data android:scheme="http" />
                 <data android:scheme="https" />
                 <data android:host="terabox.com" android:pathPrefix="/s/" />
-                <data android:host="www.terabox.com" android:pathPrefix="/s/" />
-                <data android:host="1024terabox.com" android:pathPrefix="/s/" />
-                <data android:host="www.1024terabox.com" android:pathPrefix="/s/" />
-                <data android:host="teraboxapp.com" android:pathPrefix="/s/" />
-                <data android:host="www.teraboxapp.com" android:pathPrefix="/s/" />
-                <data android:host="dm.terabox.com" android:pathPrefix="/s/" />
-                <data android:host="dubox.com" android:pathPrefix="/s/" />
-            </intent-filter>
-        </activity>
-
-    </application>
-</manifest>
+                <data
