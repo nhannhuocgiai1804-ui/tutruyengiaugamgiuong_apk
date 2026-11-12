@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.terabox.reader">
 
-    <!-- Quyền mạng và giữ màn hình sáng khi đọc sách -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <!-- Hỗ trợ màn hình máy tính bảng và màn hình gập -->
     <supports-screens
         android:smallScreens="true"
         android:normalScreens="true"
@@ -39,13 +37,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <!-- Mở link chia sẻ TeraBox từ app khác (Zalo, Chrome, Messenger) -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="http" />
                 <data android:scheme="https" />
                 <data android:host="terabox.com" android:pathPrefix="/s/" />
-                <data
+                <data android:host="www.terabox.com" android:pathPrefix="/s/" />
+                <data android:host="1024terabox.com" android:pathPrefix="/s/" />
+                <data android:host="www.1024terabox.com" android:pathPrefix="/s/" />
+                <data android:host="teraboxapp.com" android:pathPrefix="/s/" />
+                <data android:host="www.teraboxapp.com" android:pathPrefix="/s/" />
+                <data android:host="dm.terabox.com" android:pathPrefix="/s/" />
+                <data android:host="dubox.com" android:pathPrefix="/s/" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
